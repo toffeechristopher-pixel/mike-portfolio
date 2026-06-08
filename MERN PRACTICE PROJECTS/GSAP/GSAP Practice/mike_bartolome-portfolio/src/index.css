@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'main-font';
+  src: url('/fonts/league-spartan.bold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+html,
+body {
+  overflow-x: hidden;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
