@@ -6,7 +6,9 @@ export default {
   theme: {
     extend: {
       fontFamily: { 
-        custom: ['main-font', 'Calibri'], 
+        sanchez: ['sanchez', 'Calibri'], 
+        perandory: ['perandory', 'Times New Roman'], 
+        spartan:['spartan', 'Arial']
       },},
   },
   plugins: [],

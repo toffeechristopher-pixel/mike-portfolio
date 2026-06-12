@@ -1,14 +1,37 @@
 @font-face {
-  font-family: 'main-font';
-  src: url('/fonts/league-spartan.bold.otf') format('opentype');
+  font-family: 'sanchez';
+  src: url('public/fonts/Sanchezregular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
-html,
-body {
-  overflow-x: hidden;
+
+@font-face {
+  font-family: 'perandory';
+  src: url('public/fonts/Perandory-Condensed.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
+
+@font-face {
+  font-family: 'spartan';
+  src: url('public/fonts/LeagueSpartan.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html,
+body {
+
+
+}

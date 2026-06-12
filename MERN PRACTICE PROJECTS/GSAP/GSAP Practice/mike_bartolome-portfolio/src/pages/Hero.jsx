@@ -1,87 +1,74 @@
-import React, { useRef } from 'react'
+import React from 'react'
+import Mike from '../public/img/Mike.png'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
-import { TextPlugin } from "gsap/TextPlugin";
-import SplitText from 'gsap/src/SplitText';
-import arrow from '../assets/svg-elements/Line2.svg'
-
-
-
-gsap.registerPlugin(TextPlugin, SplitText, useGSAP);
-
+import ScrollTrigger from 'gsap/ScrollTrigger.js'
 const Hero = () => {
+  gsap.registerPlugin(ScrollTrigger)
 
-useGSAP(()=>{
-  const split = SplitText.create("#HerosectionText", {
-  type: "words"});
-
-  const arrowEase = "power"
-
-  const tl1 = () => {
-    const tl = gsap.timeline({defaults: {ease: arrowEase}});
-    tl.from("#arrow3", { x: -1000, y: 500 , opacity: 0})
-    
-    return tl
-  }
-
-  const tl2 = () => {
-    const tl = gsap.timeline({defaults: {ease: arrowEase}});
-    tl.from("#arrow2", {x: -1000, y: 500 , opacity: 0})
-    return tl
-  }
-    const tl3 = () => {
-    const tl = gsap.timeline({defaults: {ease: arrowEase}});
-    tl.from("#arrow1", { x: -1000, y: 500, opacity: 0})
-    return tl
-  }
-
-  const heroTextTL = () => {
-    const tl = gsap.timeline({defaults: {ease: arrowEase}});
-    tl.from(split.words, {
-      y:20,
-      opacity:0,
-      stagger: 0.02,
-      duration: 0.3,
-      ease: "back.out"
+  useGSAP(()=>{
+    gsap.to("#decorativetext", {
+      xPercent: -106,
+      duration:20,
+      ease:"linear",
+      repeat:-1
     })
-    return tl
-  }
-  const mainTimeline = gsap.timeline()
-  
-  mainTimeline.add(tl1()).add(tl2()).add(tl3()).add(heroTextTL())
-},[])
+    gsap.to("#decorativetext2", {
+      xPercent: -106,
+      duration:25,
+      ease:"linear",
+      repeat:-1
+    })
+
+    gsap.to("#portfolio-block", {
+      scrollTrigger:{
+        trigger: "#portfolio-block",
+        start:"-100px center",
+        markers:true,
+        toggleActions: "restart none none pause",
+        scrub:true
+      },
+      y:-100,
+   
+    })
+    
+  })
+
   return (
-    <div className="flex min-h-screen items-center justify-center gap-[310px] ">
-      <nav className="font-custom text-2xl relative bottom-[250px] left-[90px]">
-        <ul id="HerosectionText">
-          <li><a  href="#" className=" hover:text-amber-500">Introduction</a></li>
-          <li><a href="">Skills & Services</a></li>
-          <li><a href="">Projects & Testimonies</a></li>
-        </ul>
+    <section className="h-[730px] flex flex-col">
+
+    <section className='relative top-[30px] w-[600px] h-[40px] left-[30px]'>
+      <nav className="text-gray-400 m-[5px] flex gap-[50px] text-[10px] font-sanchez justify-center items-center">
+        <img src="#" className="l-[30px] w-[30px]"/>
+        <a href="#" >Introduction</a>
+        <a href="#" >Skills & Services</a>
+        <a href="#">Upscale</a>
+        <a href="#" className='bg-white text-black p-[1px] pl-5 pr-5 h-[20px]' >Contacts</a>
       </nav>
+    </section>
 
-      <section className="flex justify-center overflow-x-auto pointer-events-none">
-      <img src={arrow} className="w-[1500px] h-auto absolute top-[60px] right-[625px]"  id="arrow3"/>
-      <img src={arrow} className="w-[1300px] h-auto absolute top-[200px] right-[645px]" id="arrow2"/>
-      <img src={arrow} className="w-[1100px] h-auto absolute top-[350px] right-[685px]" id="arrow1"/>
-     
-      </section>
+    <section>
+        <figure className="absolute bottom-[900px] right-[110px] w-auto z-10">
+            <img src={Mike} className=" w-[1300px] h-auto "/>
+        </figure>
+      <section>
+        <div className="text-white flex relative top-[130px] "id="decorativetext">   
+            <span className="font-perandory text-[180px] gradient-text w-auto text-nowrap"  >WEB DESIGN USER EXPERIENCE USER </span>
+            <span className="font-perandory text-[180px] gradient-text w-auto text-nowrap"  >WEB DESIGN USER EXPERIENCE USER </span>
+        </div>
+        <div className='flex ' id="decorativetext2">
+          <span className="text-white font-spartan text-[40px] text-nowrap relative z-0 top-[40px]">MARKETING BRANDING STRATEGY GROWTH ENGAGEMENT VISIBILITY REACH CONVERSION  </span> 
+           <span className="text-white font-spartan text-[40px] text-nowrap relative z-0 top-[40px] ml-[20px]">MARKETING BRANDING STRATEGY GROWTH ENGAGEMENT VISIBILITY REACH CONVERSION </span> 
+        </div>
+        </section>
+    </section>
 
-      <section className='text-orange-500 relative top-[140px] left-[150px]' id="HerosectionText">
-        <h1 id="heroText" className="
-        text-5xl
-      text-black 
-        font-custom w-[400px] 
-        text-right 
-        "
-        >
-        Grow and Innovate, <br/>Build with <a href="#" className="text-orange-500 ">Mike</a>
-        </h1>
-        <p className="text-black text-right text-2xl relative right-[210px] w-[620px]  ">
-          Traffic is good, but growth is better. We blend data-driven marketing strategies with clean, high-performing digital development to put your brand in front of the right audience. Let’s build an online presence that doesn’t just look great, but actively scales your business.
-        </p>
-      </section>
-      </div>
+    <section className="text-white w-[320px] relative left-[1000px] top-[210px] z-10" id="portfolio-block">
+            <h2 className="font-spartan text-4xl w-[310px]  text-right"> <b>Portfolio </b></h2>
+            <h3 className="font-sanchez text-2xl w-[310px]  text-right ">Michael Ticzon Bartolome</h3>
+    </section>
+
+    </section>
   )
 }
 
