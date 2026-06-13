@@ -4,6 +4,7 @@ import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import ScrollSmoother from 'gsap/ScrollSmoother'
 import ScrollTrigger  from 'gsap/ScrollTrigger'
+import Art_Mike from './pages/Art_Mike'
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger) 
 
 const App = () => {
@@ -21,7 +22,8 @@ const App = () => {
       <div id="smooth-wrapper">
         <div id="smooth-content" className="bg-black ">
           <Hero/>
-          <div className="h-[900px]"></div>
+          <Art_Mike/>
+          <div className="bg-red-300 h-[5000px] "></div>
         </div>
       </div>
     </main>

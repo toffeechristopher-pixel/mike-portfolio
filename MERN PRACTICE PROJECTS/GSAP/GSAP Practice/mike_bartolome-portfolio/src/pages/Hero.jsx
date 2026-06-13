@@ -24,7 +24,7 @@ const Hero = () => {
       scrollTrigger:{
         trigger: "#portfolio-block",
         start:"-100px center",
-        markers:true,
+       
         toggleActions: "restart none none pause",
         scrub:true
       },
@@ -47,14 +47,14 @@ const Hero = () => {
       </nav>
     </section>
 
-    <section>
-        <figure className="absolute bottom-[900px] right-[110px] w-auto z-10">
-            <img src={Mike} className=" w-[1300px] h-auto "/>
+    <section className="relative">
+        <figure className="absolute top-[-60px] right-[200px] w-auto z-10">
+            <img src={Mike} className=" w-[1120px] h-auto "/>
         </figure>
-      <section>
+      <section className='-rotate-[15deg]'>
         <div className="text-white flex relative top-[130px] "id="decorativetext">   
-            <span className="font-perandory text-[180px] gradient-text w-auto text-nowrap"  >WEB DESIGN USER EXPERIENCE USER </span>
-            <span className="font-perandory text-[180px] gradient-text w-auto text-nowrap"  >WEB DESIGN USER EXPERIENCE USER </span>
+            <span className="font-perandory text-[180px] gradient-text w-auto text-nowrap">WEB DESIGN USER EXPERIENCE USER </span>
+            <span className="font-perandory text-[180px] gradient-text w-auto text-nowrap">WEB DESIGN USER EXPERIENCE USER </span>
         </div>
         <div className='flex ' id="decorativetext2">
           <span className="text-white font-spartan text-[40px] text-nowrap relative z-0 top-[40px]">MARKETING BRANDING STRATEGY GROWTH ENGAGEMENT VISIBILITY REACH CONVERSION  </span> 
